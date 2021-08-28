@@ -1,10 +1,10 @@
-package com.example.swooshproject
+package Controller
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.example.swooshproject.EXTRA_LEAGUE
+import com.example.swooshproject.R
 import kotlinx.android.synthetic.main.activity_league.*
 
 
@@ -36,7 +36,7 @@ class LeagueActivity : BaseActivity() {
     fun leagueNextClicked(view: View) {
         if(selectedLeaguge!="") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUGE,selectedLeaguge)
+            skillActivity.putExtra(EXTRA_LEAGUE,selectedLeaguge)
             startActivity(skillActivity)
         }else{
             Toast.makeText(this,"please select a Leauge",Toast.LENGTH_SHORT).show()
